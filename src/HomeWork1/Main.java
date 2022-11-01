@@ -62,23 +62,22 @@ public class Main {
 
         // --------------------------------------- Задание 3 -----------------------------------------------------------
 
-        HashMap("str1", 4);
-        HashMap("str2", 4);
-        HashMap("str2", 4);
-        HashMap("str2", 7);
+        hashMap("str1", 4);
+        hashMap("str2", 4);
+        hashMap("str2", 4);
+        hashMap("str2", 7);
 
     }
 
-    final static void HashMap(String line, int num) {
+    final static void hashMap(String line, int num) {
         
-        String Result = String.valueOf((hashMap.get(line)));
-        if (Result == "null") {                                       // Бакет не найден
+        // String Result = String.valueOf((hashMap.get(line)));
+        if (String.valueOf((hashMap.get(line))) == "null") {                                       // Бакет не найден
             hashMap.put(line, num);
-        } else if (Integer.parseInt(Result) == num) {                   // Выкинуть исключение
+        } else if (hashMap.get(line) == num) {                   // Выкинуть исключение
             throw new IllegalArgumentException("Повтор ключ-значения");
         } else {                                                     // Перезаписываем
             hashMap.put(line, num);
-        }
-    }
+        }    }
 
 }
